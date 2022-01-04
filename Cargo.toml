@@ -1,0 +1,27 @@
+[package]
+name = "remote_storage_adapter"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+default = ["with-serde"]
+with-serde = ["protobuf/with-serde"]
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+protobuf = { version = "2", features = ["with-bytes"] }
+warp = "0.3"
+bytes = "1.1"
+snap = "1"
+tracing = "0.1"
+tracing-subscriber = "0.2"
+structopt = { version = "0.3.25", default-features = false }
+futures = "0.3"
+async-trait = "0.1"
+dyn-clone = "1"
+
+[build-dependencies]
+protobuf-codegen-pure = "2"
+
